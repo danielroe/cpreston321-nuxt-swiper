@@ -24,6 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   hooks: {
     'prepare:types': (ctx) => {
+      ctx.tsConfig.compilerOptions!.types ||= []
       ctx.tsConfig.compilerOptions!.types.push('swiper/vue')
       ctx.references.push({
         types: 'swiper/vue'
